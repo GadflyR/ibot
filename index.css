@@ -295,7 +295,7 @@ body {
     font-weight:bold;
 }
 #footer a {
-    color:rgb(255, 50, 50) ;
+    color:rgb(170, 50, 255) ;
 }
 #particles-js {
     position:fixed;
@@ -310,14 +310,14 @@ body {
     background: #fff; 
 }
 ::-webkit-scrollbar-thumb {
-    background: rgb(255, 50, 50); 
+    background: rgb(170, 50, 255); 
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 50, 50,0.8); 
+    background: rgba(170, 50, 255,0.8); 
 }
 ::selection {
 	color: #fff;
-	background: rgb(255, 50, 50);
+	background: rgb(170, 50, 255);
 }
 
 @media (max-width: 800px){ 
