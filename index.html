@@ -1,97 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>iBOT</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>iBOT</title>
+
+  <!-- Animate.css -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+  />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  />
+
+  <!-- jQuery -->
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="index.css" />
 </head>
+
 <body>
-    <div id="loading">
-        <div id="spinner"></div>
+  <!-- Loading Screen -->
+  <div id="loading">
+    <div id="spinner"></div>
+  </div>
+
+  <!-- Particles Background -->
+  <div id="particles-js" style="position: fixed;height: 100%; width: 100%;"></div>
+
+  <!-- Purple Sliding Boxes (initial animation) -->
+  <div id="box">
+    <div class="box1 onlywide animated bounceOutLeft" style="animation-delay:1.7s;"></div>
+    <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.8s;"></div>
+    <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.9s;"></div>
+    <div class="box2 animated bounceOutRight"         style="animation-delay:1.9s;"></div>
+    <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.8s;"></div>
+    <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
+  </div>
+
+  <!-- Side Buttons -->
+  <a
+    id="about"
+    onclick="showabout()"
+    class="animated fadeIn"
+    style="animation-delay:2.2s;"
+  >about</a>
+
+  <a
+    id="product"
+    onclick="showproduct()"
+    class="animated fadeIn"
+    style="animation-delay:2.2s;"
+  >product</a>
+
+  <a
+    id="work"
+    onclick="showwork()"
+    class="animated fadeIn"
+    style="animation-delay:2.2s;"
+  >brand story</a>
+
+  <!-- FIRST PAGE / MAIN CONTENT -->
+  <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
+    <h1>iBot</h1>
+    <h2>AI Companionship / Bilingual Environment / Digital Human Conversations</h2>
+
+    <!-- Mobile Menu (only displayed on small screens) -->
+    <div id="menu">
+      <a onclick="showabout()">about</a>
+      <a onclick="showwork()">products</a>
     </div>
-    <div id="particles-js"></div>
-    <div id="box">
-        <div class="box1 onlywide animated bounceOutLeft" style="animation-delay:1.7s;"></div>
-        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.8s;"></div>
-        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.9s;"></div>
-        <div class="box2 animated bounceOutRight" style="animation-delay:1.9s;"></div>
-        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.8s;"></div>
-        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
-    </div>
-    <a id="about" onclick="showabout()" class="animated fadeIn" style="animation-delay:2.2s;">about</a>
-    <a id="work" onclick="showwork()" class="animated fadeIn" style="animation-delay:2.2s;">products</a>
-    <a id="contact" onclick="showcontact()" class="animated fadeIn" style="animation-delay:2.2s;">contact</a>
-    <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
-        <h1>iBot</h1>
-        <h2>AI Companionship / Bilingual Environment / Digital Human Conversations</h2>
-        <div id="menu">
-            <a onclick="showabout()">about</a>
-            <a onclick="showwork()">products</a>
-            <a onclick="showcontact()">contact</a>
-        </div>
-        <table>
-                <tr>
-                    <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="https://www.linkedin.com/in/shaoheng-ren-620a0a28a/"><i class="fab fa-linkedin"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social"><i class="fab fa-twitter"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social"><i class="fab fa-instagram"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social"><i class="fab fa-facebook"></i></a></td>
-                </tr>
-        </table>
-    </div>
-    <div id="work_container" class="container">
-        <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
-        <h1>我们的产品。</h1>
-        <section>
-            <h2>APP</h2>
-            <p>iBot安卓客户端是一款为移动设备设计的应用程序，让孩子们可以随时随地沉浸在学习之中。包含丰富的课程和互动挑战 + 随时提醒孩子学习进度。</p>
-            <h2>学习机</h2>
-            <p>iBot学习机是一款革新的学习设备，专为深化学习和增强理解而设计。它结合了触摸屏操作和实体交互元素，为孩子们提供了一个更加集中和沉浸式的学习环境。</p>
-            <h2>机器人</h2>
-            <p>iBot机器人专注于家居环境，它不仅能教授课程，还能作为一个互动伙伴与孩子们一起玩耍，以及调解家庭矛盾等。</p>
-            <button class="btn_one">查看Demo</button>
-            <button class="btn_two">立即订购</button>
-        </section>
-    </div>
-    <div id="about_container" class="container">
-            <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
-            <h1>关于iBot。</h1>
-            <section>
-                <h2>iBot是什么？</h2>
-                <p>AI时代中国孩子的科技玩伴，让高智高能的AI科技给您的孩子营造多语言成长环境，呵护ta的心灵健康，培养taAI时代的未来竞争力。</p>
-                <p>我们致力于以人工智能最新科技生成的儿童情感陪护、心理健康、与亲子关系疏导，以及中国儿童全维度的“未来竞争力”素养成长。</p>
-            </section>
-            <section>
-                <h2>为什么选择iBot？</h2>
-                <p>
-                    人工智能科技已经跨越奇点，将人工智能落地中国儿童的健康成长，符合国家科技创新方针和时代特色，也正是中国千千万万个家庭的迫切需求。
-                </p>
-                <p>
-                    AI时代已来，中国青少年应该从小接触AI，了解AI，使用AI，才能在世界科技浪潮的最新发展中走在前列。
-                </p>
-            </section>
-        </div>
-          <div id="contact_container" class="container">
-            <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
-            <h1>联系我们。</h1>
-            <section>
-                <p>
-                    <form>
-                        <input type="text" placeholder="name" required>
-                        <input type="email" placeholder="email" required><br>
-                        <textarea placeholder="your message" required rows="5"></textarea><br>
-                        <button class="btn_one">send</button>
-                    </form> 
-                </p>
-            </section>
-        </div>
-    <script src="index.js" type="text/javascript"></script>
-    <script src="particles.js"></script>
-    <script src="app.js"></script>
+  </div>
+
+  <!-- PRODUCT Container -->
+  <div id="product_container" class="container">
+    <div onclick="closeproduct()"><i class="fas fa-angle-left"></i></div>
+    <h1>我们的产品。</h1>
+    <section>
+      <h2>APP</h2>
+      <p>
+        iBot安卓客户端是一款为移动设备设计的应用程序，让孩子们可以随时随地沉浸在学习之中。包含丰富的课程和互动挑战 + 随时提醒孩子学习进度。
+      </p>
+      <h2>学习机</h2>
+      <p>
+        iBot学习机是一款革新的学习设备，专为深化学习和增强理解而设计。它结合了触摸屏操作和实体交互元素，为孩子们提供了一个更加集中和沉浸式的学习环境。
+      </p>
+      <h2>机器人</h2>
+      <p>
+        iBot机器人专注于家居环境，它不仅能教授课程，还能作为一个互动伙伴与孩子们一起玩耍，以及调解家庭矛盾等。
+      </p>
+      <button class="btn_one">查看Demo</button>
+      <button class="btn_two">立即订购</button>
+    </section>
+  </div>
+
+  <!-- ABOUT Container -->
+  <div id="about_container" class="container">
+    <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
+    <h1>关于iBot。</h1>
+    <section>
+      <h2>iBot是什么？</h2>
+      <p>AI时代中国孩子的科技玩伴，让高智高能的AI科技给您的孩子营造多语言成长环境，呵护ta的心灵健康，培养taAI时代的未来竞争力。</p>
+      <p>我们致力于以人工智能最新科技生成的儿童情感陪护、心理健康、与亲子关系疏导，以及中国儿童全维度的“未来竞争力”素养成长。</p>
+    </section>
+    <section>
+      <h2>为什么选择iBot？</h2>
+      <p>
+        人工智能科技已经跨越奇点，将人工智能落地中国儿童的健康成长，符合国家科技创新方针和时代特色，也正是中国千千万万个家庭的迫切需求。
+      </p>
+      <p>
+        AI时代已来，中国青少年应该从小接触AI，了解AI，使用AI，才能在世界科技浪潮的最新发展中走在前列。
+      </p>
+    </section>
+  </div>
+
+  <!-- BRAND STORY Container -->
+  <div id="work_container" class="container">
+    <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
+    <h1>我们的品牌。</h1>
+    <section>
+      <p>
+        我们的品牌故事始于一个简单的梦想：让每个孩子都能享受AI时代的红利，感受科技的力量和乐趣。
+      </p>
+      <p>
+        我们深信，孩子的潜能是无限的，而让他们提早接触并应用AI，不仅可以开拓他们的创造力，更能让他们在未来拥有独当一面的竞争力。
+      </p>
+    </section>
+  </div>
+
+  <!-- SECOND PAGE (normal block after first page) -->
+  <div class="second-page">
+    <h1 class="animated fadeInUp">Welcome to the second page!</h1>
+    <p class="animated fadeInUp" style="animation-delay: 0.5s;">
+      这里是更多的内容区域，您可以继续向下滚动浏览。
+    </p>
+    <p class="animated fadeInUp" style="animation-delay: 0.7s;">
+      Feel free to add more sections, images, or animations here.
+    </p>
+  </div>
+
+  <!-- CONTACT Container -->
+  <div id="contact_container" class="container">
+    <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
+    <h1>联系我们。</h1>
+    <section>
+      <p>
+        <form>
+          <input type="text" placeholder="name" required>
+          <input type="email" placeholder="email" required><br>
+          <textarea placeholder="your message" required rows="5"></textarea><br>
+          <button class="btn_one">send</button>
+        </form>
+      </p>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <script src="index.js"></script>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
