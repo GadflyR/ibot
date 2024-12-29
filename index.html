@@ -42,7 +42,7 @@
   </div>
 
   <!-- Particles Background -->
-  <div id="particles-js" style="position: fixed;height: 100%; width: 100%;"></div>
+  <div id="particles-js" style="position: fixed; height: 100%; width: 100%;"></div>
 
   <!-- Purple Sliding Boxes (initial animation) -->
   <div id="box">
@@ -54,6 +54,13 @@
     <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
   </div>
 
+  <li><a
+  id="storygenerator"
+  href="https://story.ibot1.net/"
+  class="animated fadeIn"
+  style="animation-delay:2.2s;"
+  >story generator</a></li>
+  
   <!-- Side Buttons -->
   <a
     id="about"
@@ -61,13 +68,6 @@
     class="animated fadeIn"
     style="animation-delay:2.2s;"
   >about</a>
-
-  <a
-    id="product"
-    onclick="showproduct()"
-    class="animated fadeIn"
-    style="animation-delay:2.2s;"
-  >product</a>
 
   <a
     id="work"
@@ -84,30 +84,8 @@
     <!-- Mobile Menu (only displayed on small screens) -->
     <div id="menu">
       <a onclick="showabout()">about</a>
-      <a onclick="showwork()">products</a>
+      <a onclick="showwork()">brand story</a>
     </div>
-  </div>
-
-  <!-- PRODUCT Container -->
-  <div id="product_container" class="container">
-    <div onclick="closeproduct()"><i class="fas fa-angle-left"></i></div>
-    <h1>我们的产品。</h1>
-    <section>
-      <h2>APP</h2>
-      <p>
-        iBot安卓客户端是一款为移动设备设计的应用程序，让孩子们可以随时随地沉浸在学习之中。包含丰富的课程和互动挑战 + 随时提醒孩子学习进度。
-      </p>
-      <h2>学习机</h2>
-      <p>
-        iBot学习机是一款革新的学习设备，专为深化学习和增强理解而设计。它结合了触摸屏操作和实体交互元素，为孩子们提供了一个更加集中和沉浸式的学习环境。
-      </p>
-      <h2>机器人</h2>
-      <p>
-        iBot机器人专注于家居环境，它不仅能教授课程，还能作为一个互动伙伴与孩子们一起玩耍，以及调解家庭矛盾等。
-      </p>
-      <button class="btn_one">查看Demo</button>
-      <button class="btn_two">立即订购</button>
-    </section>
   </div>
 
   <!-- ABOUT Container -->
@@ -146,13 +124,26 @@
 
   <!-- SECOND PAGE (normal block after first page) -->
   <div class="second-page">
-    <h1 class="animated fadeInUp">Welcome to the second page!</h1>
-    <p class="animated fadeInUp" style="animation-delay: 0.5s;">
-      这里是更多的内容区域，您可以继续向下滚动浏览。
-    </p>
-    <p class="animated fadeInUp" style="animation-delay: 0.7s;">
-      Feel free to add more sections, images, or animations here.
-    </p>
+    <div class="image-grid">
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.3s;">
+        <img src="img/Image1.jpg" alt="Image 1" />
+      </div>
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.4s;">
+        <img src="img/Image2.jpg" alt="Image 2" />
+      </div>
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.5s;">
+        <img src="img/Image3.png" alt="Image 3" />
+      </div>
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.6s;">
+        <img src="img/Image4.jpg" alt="Image 4" />
+      </div>
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.7s;">
+        <img src="img/Image5.png" alt="Image 5" />
+      </div>
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.8s;">
+        <img src="img/Image6.jpg" alt="Image 6" />
+      </div>
+    </div>
   </div>
 
   <!-- CONTACT Container -->
