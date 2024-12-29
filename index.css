@@ -4,15 +4,12 @@ body {
   margin: 0;
   padding: 0;
   /* Fixed background image */
-  background: url("purple_theme.jpg") center center no-repeat;
-  background-size: cover;
-  background-attachment: fixed;  /* <-- Make background stay fixed */
+  background: url("purple_theme.jpg") top center no-repeat;
+  background-attachment: fixed;
   
   /* Allow vertical scrolling, hide horizontal overflow */
   overflow-x: hidden;
   font-family: 'Josefin Sans', sans-serif;
-  /* The page can be taller than 100vh if there's enough content */
-  min-height: 100vh;
 }
 
 /* Loading Screen */
@@ -106,11 +103,40 @@ body {
   text-align: center;
 }
 
+/* Story Generator Button */
+#storygenerator {
+  position: fixed;
+  left: 0;             /* pinned to the left edge */
+  bottom: 70%;         /* around halfway down the screen */
+  transform: translateY(50%); 
+  /* Larger and more striking appearance */
+  width: 160px;        /* bigger width */
+  height: 60px;        /* taller button */
+  line-height: 60px;   /* vertically center text */
+  background: #ff5050; /* bright color */
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0 30px 30px 0;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  z-index: 999;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out, background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* Hover effect for extra emphasis */
+#storygenerator:hover {
+  background: #ff7070;  /* slightly lighter red on hover */
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+  transform: translateY(50%) scale(1.05); /* Slight scale up on hover */
+}
+
 /* Side Buttons */
-#about,
-#product {
+#about {
   width: 10vw;
   height: 10vw;
+  bottom: 40vh;
   text-align: center;
   font-size: 25px;
   transform: rotate(-90deg);
@@ -124,12 +150,6 @@ body {
   z-index: 4;
   transition: 0.4s ease-in-out;
   border-radius: 0 0 100px 100px;
-}
-#about {
-  bottom: 45vh;
-}
-#product {
-  bottom: 30vh;
 }
 #work {
   width: 10vw;
@@ -153,7 +173,6 @@ body {
 /* Hover states */
 #about:hover,
 #work:hover,
-#product:hover,
 #contact:hover {
   background: rgba(170, 50, 255, 0.9);
   cursor: pointer;
@@ -242,19 +261,6 @@ body {
   padding: 8px 60px;
 }
 
-/* Contact form styling */
-.container form input {
-  width: 46%;
-  margin: 20px 1%;
-  background: transparent;
-  border: 0px;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
-  padding: 8px 10px;
-  font-size: 18px;
-  color: #fff;
-  font-weight: bold;
-  transition: 0.4s ease-in-out;
-}
 .container form textarea {
   width: 96%;
   margin: 20px 1%;
@@ -280,15 +286,93 @@ body {
   color: #fff;
 }
 
-/* Second Page */
+/* Second Page Styling */
 .second-page {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #ffffff44, #aa32ff44);
-  color: #fff;
+  background: #fff; /* White background */
+  color: #000;      /* Black text for readability */
   text-align: center;
-  padding: 10vh 5vw;
+  padding: 5vh 3vw; /* Vertical and horizontal padding */
+  box-sizing: border-box;
 }
+
+/* Image Grid Layout */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-gap: 0; /* No gaps between grid cells */
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  margin: 0 auto;
+  position: relative; /* For stacking during hover effects */
+  overflow: hidden; /* Prevent overflow of expanded frames */
+}
+
+/* Image Wrapper */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Each frame takes up the full height of its grid cell */
+  overflow: hidden;
+  clip-path: polygon(8% 0%, 92% 0%, 88% 100%, 0% 100%); /* Much thinner and inclined */
+  margin-left: -3%; /* Aggressive overlap between frames */
+  transition: clip-path 0.4s ease, transform 0.4s ease, z-index 0.4s ease;
+  z-index: 1;
+}
+
+/* Image Styling */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire frame */
+  transition: transform 0.4s ease;
+}
+
+/* Hover Effects */
+
+/* Hovered Frame */
+.image-wrapper:hover {
+  z-index: 2; /* Bring the hovered frame to the front */
+  clip-path: polygon(-10% 0%, 110% 0%, 110% 100%, -10% 100%); /* Expand outward while staying inclined */
+  transform: scale(1.1); /* Slightly enlarge */
+}
+
+/* Shrink Non-Hovered Frames */
+.image-grid:hover .image-wrapper:not(:hover) {
+  z-index: 1;
+  clip-path: polygon(10% 0%, 90% 0%, 85% 100%, 5% 100%); /* Adjusted for tighter fit */
+  transform: scale(0.9); /* Shrink adjacent frames slightly */
+}
+
+/* Responsive Adjustments */
+
+/* Medium Screens: 2 columns */
+@media (max-width: 1200px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    height: 100vh; /* Keep grid height at 100% of the viewport */
+  }
+
+  .image-wrapper {
+    clip-path: polygon(9% 0%, 91% 0%, 87% 100%, 0% 100%);
+    margin-left: -2%; /* Maintain overlap for medium screens */
+  }
+}
+
+/* Small Screens: 1 column */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr; /* 1 column */
+    height: 100vh; /* Keep grid height at 100% of the viewport */
+  }
+
+  .image-wrapper {
+    clip-path: polygon(8% 0%, 92% 0%, 90% 100%, 0% 100%);
+    margin-left: 0; /* No overlap needed for single column */
+  }
+}
+
 
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -311,37 +395,49 @@ body {
   background: rgb(170, 50, 255);
 }
 
-/* Responsive: hide side buttons, show #menu on smaller screens */
-@media (max-width: 800px) {
-  #about,
-  #work,
-  #product {
-    display: none;
-  }
-  #menu {
-    display: inline-block;
-  }
-  #middle {
-    width: 90vw;
-    margin: 0 auto;
-    padding: 10vh 0;
-  }
-  #middle table {
-    width: 80%;
-  }
-  .container form input {
-    width: 90%;
-  }
-  .container form textarea {
-    width: 90%;
-  }
-  #onlywide {
-    display: none !important;
-  }
-  .box2 {
-    margin-left: 0px !important;
-  }
-  #box div {
-    width: 100%;
-  }
+/* Modal Styling (Optional) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; 
+  z-index: 1000; /* Above other content */
+  padding-top: 60px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.8); /* Black with opacity */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
