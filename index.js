@@ -41,29 +41,3 @@ setTimeout(function(){
     $("#product").removeClass("animated fadeIn");
   },1000);
 },1500);
-
-document.addEventListener('DOMContentLoaded', () => {
-  const imageGrid = document.querySelector('.image-grid');
-  const imageWrappers = document.querySelectorAll('.image-wrapper');
-
-  imageWrappers.forEach(wrapper => {
-    wrapper.addEventListener('mouseenter', () => {
-      // Add hover effect to the current frame
-      wrapper.classList.add('hovered');
-      // Shrink other frames
-      imageWrappers.forEach(otherWrapper => {
-        if (otherWrapper !== wrapper) {
-          otherWrapper.classList.add('shrunk');
-        }
-      });
-    });
-
-    wrapper.addEventListener('mouseleave', () => {
-      // Remove hover effect from all frames
-      wrapper.classList.remove('hovered');
-      imageWrappers.forEach(otherWrapper => {
-        otherWrapper.classList.remove('shrunk');
-      });
-    });
-  });
-});
