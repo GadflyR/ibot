@@ -297,7 +297,7 @@ body {
 
 /* TEXT between rows: More space above, less space below */
 .text-between {
-  margin-top: 60px;     /* Increase space from the images above */
+  margin-top: 150px;     /* Increase space from the images above */
   margin-bottom: 20px;  /* Decrease space before the images below */
   max-width: 700px;
   font-size: 18px;
@@ -315,7 +315,7 @@ body {
   gap: 30px;
   padding: 20px 0;
   justify-items: center;
-  margin-top: 50px; /* Additional space above each row (optional) */
+  margin-top: 20px; /* Additional space above each row (optional) */
 }
 
 /* Wrapper around individual images with a light grey background */
