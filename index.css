@@ -167,7 +167,7 @@ body {
   border-radius: 0 0 100px 100px;
 }
 
-/* Hover states */
+/* Hover states for side buttons */
 #about:hover,
 #work:hover,
 #contact:hover {
@@ -189,7 +189,7 @@ body {
   color: rgb(170, 50, 255);
 }
 
-/* Container for pop-up sections */
+/* Container for pop-up sections (About, Brand Story, Contact) */
 .container {
   width: 90vw;
   height: 90vh;
@@ -202,7 +202,7 @@ body {
   left: 0;
   max-height: 100vh;
   overflow-y: auto;
-  display: none;
+  display: none; /* Hidden by default, shown via JS */
 }
 .container div {
   font-size: 25px;
@@ -258,6 +258,7 @@ body {
   padding: 8px 60px;
 }
 
+/* Form fields in pop-up containers */
 .container form textarea {
   width: 96%;
   margin: 20px 1%;
@@ -287,59 +288,55 @@ body {
 .second-page {
   width: 100%;
   min-height: 100vh;
-  background: #fff; /* White background */
+  background: #fff; /* White background for the second page section */
   color: #000;      /* Black text for readability */
   text-align: center;
   padding: 5vh 3vw; /* Vertical and horizontal padding */
   box-sizing: border-box;
 }
 
-/* 
-  Here we create a more spaced-out grid, 
-  but we’ll simply reuse this grid class
-  multiple times (one for each row).
-*/
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-  gap: 30px; /* Increased gap for looser arrangement */
-  padding: 20px 0; /* Extra space around images */
-  justify-items: center;
-}
-
-/* 
-  Light purple background for each image, 
-  plus some padding to create a "card" effect 
-*/
-.image-wrapper {
-  width: 90%;
-  background: #f3e5f5; /* Light purple */
-  border-radius: 8px;  /* Slightly rounded corners */
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden; /* Hide overflow if image is bigger than wrapper */
-}
-
-.image-wrapper img {
-  width: 100%; /* Scale the image to fit the wrapper width */
-  height: auto; 
-  display: block; 
-}
-
-/* Paragraph text between rows */
+/* Text paragraphs placed between rows of images */
 .text-between {
-  margin: 30px auto;
+  /* Increase margins for extra space above/below this text */
+  margin: 40px auto;
   max-width: 700px;
   font-size: 18px;
-  color: #444; /* Softer text color */
+  color: #444;
   line-height: 1.5;
   padding: 0 20px;
   box-sizing: border-box;
   text-align: center;
 }
 
-/* Scrollbar */
+/* Image Grid Rows */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px 0;
+  justify-items: center;
+  /* Additional space above each image row (optional) */
+  margin-top: 50px;
+}
+
+/* Wrapper around individual images with a light grey background */
+.image-wrapper {
+  width: 90%;
+  background: #f3f3f3; /* Light grey */
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -354,12 +351,13 @@ body {
   background: rgba(170, 50, 255, 0.8);
 }
 
-/* Text selection highlight */
+/* Text selection highlight color */
 ::selection {
   color: #fff;
   background: rgb(170, 50, 255);
 }
 
+/* Misc elements (e.g., modal close button) */
 #caption {
   margin: auto;
   display: block;
