@@ -1,26 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
-/* Make sure html and body can occupy the full viewport */
+/* 
+  1) Ensure no background is set on the body
+  2) Body & html can still be set to 100% height if desired, 
+     but the main background is on #middle 
+*/
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
   overflow-x: hidden; /* Hide horizontal overflow if needed */
   font-family: 'Josefin Sans', sans-serif;
 }
 
-/* Body: background occupies exactly one screen (the first page) */
-body {
-  /* Use the purple_theme.jpg as a fixed, non-repeating,
-     fully covering background for the viewport. */
-  background: url("purple_theme.jpg") top center no-repeat;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* The image stays fixed in place */
-  color: #fff;                  /* Default text color if needed */
-}
-
-/* Loading Screen */
+/* Loading Screen (unchanged) */
 #loading {
   width: 100vw;
   height: 100vh;
@@ -32,7 +24,6 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
 #spinner {
   animation: rotate 0.56s infinite linear;
   width: 50px;
@@ -42,17 +33,12 @@ body {
   border-radius: 50%;
   margin: 0;
 }
-
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-/* Purple sliding boxes */
+/* Purple sliding boxes (unchanged) */
 #box {
   width: 100vw;
   height: 100vh;
@@ -73,7 +59,7 @@ body {
   margin-left: -5px;
 }
 
-/* Mobile menu */
+/* Mobile menu (unchanged) */
 #menu {
   width: 100%;
   text-align: center;
@@ -87,23 +73,34 @@ body {
   text-decoration: underline;
 }
 
-/* First page / main content block */
+/* 
+  First page / main content block 
+  => exactly one page in height 
+  => scrolling background 
+*/
 #middle {
   width: 100%;
-  min-height: 100vh; /* Full viewport height */
+  height: 100vh; /* Occupies exactly one viewport height */
+  background: url("purple_theme.jpg") center top no-repeat;
+  background-size: cover;
+  background-attachment: scroll; /* Ensures it moves as the page scrolls */
+  
+  /* Center content vertically & horizontally */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 10vh 0; /* some top/bottom padding */
-  /* The text is white for contrast against the purple background image */
-  color: #fff;
+  color: #fff; /* White text for contrast against the background */
+  position: relative;
 }
+
 #middle h1 {
   color: rgb(255, 50, 50);
   font-size: 70px;
   text-decoration: underline;
 }
+
 #middle table {
   width: 30%;
   margin: 6vh auto;
@@ -112,7 +109,7 @@ body {
   text-align: center;
 }
 
-/* Story Generator Button */
+/* Story Generator Button (unchanged) */
 #storygenerator {
   position: fixed;
   left: 0;
@@ -132,14 +129,13 @@ body {
   cursor: pointer;
   transition: transform 0.4s ease-in-out, background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
-
 #storygenerator:hover {
   background: #ff7070;
   box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
   transform: translateY(50%) scale(1.05);
 }
 
-/* Side Buttons */
+/* Side Buttons (unchanged) */
 #about {
   width: 10vw;
   height: 10vw;
@@ -176,7 +172,6 @@ body {
   transition: 0.4s ease-in-out;
   border-radius: 0 0 100px 100px;
 }
-
 /* Hover states for side buttons */
 #about:hover,
 #work:hover,
@@ -185,7 +180,7 @@ body {
   cursor: pointer;
 }
 
-/* Social Icons */
+/* Social Icons (unchanged) */
 .social {
   color: #fff;
   font-size: 22px;
@@ -199,7 +194,7 @@ body {
   color: rgb(170, 50, 255);
 }
 
-/* Container for pop-up sections (About, Brand Story, Contact) */
+/* Container for pop-ups (unchanged) */
 .container {
   width: 90vw;
   height: 90vh;
@@ -212,7 +207,7 @@ body {
   left: 0;
   max-height: 100vh;
   overflow-y: auto;
-  display: none; /* Hidden by default, shown via JS */
+  display: none;
 }
 .container div {
   font-size: 25px;
@@ -233,7 +228,7 @@ body {
   font-size: 21px;
 }
 
-/* Buttons inside containers */
+/* Buttons inside containers (unchanged) */
 .btn_one {
   font-size: 18px;
   font-family: 'Josefin Sans', sans-serif;
@@ -268,7 +263,7 @@ body {
   padding: 8px 60px;
 }
 
-/* Form fields in pop-up containers */
+/* Form fields in pop-up containers (unchanged) */
 .container form textarea {
   width: 96%;
   margin: 20px 1%;
@@ -294,10 +289,8 @@ body {
   color: #fff;
 }
 
-/* Second Page Section */
+/* Second Page Section (scrollable content after the first page) */
 .second-page {
-  /* The second page can scroll above the fixed background 
-     if content is long. White background for contrast. */
   width: 100%;
   min-height: 100vh;
   background: #fff;
@@ -307,10 +300,10 @@ body {
   box-sizing: border-box;
 }
 
-/* TEXT between rows: more space above, less space below */
+/* Example text-between rows (if needed) */
 .text-between {
-  margin-top: 150px;   /* Increase space from the images above */
-  margin-bottom: 20px; /* Decrease space before images below */
+  margin-top: 80px; 
+  margin-bottom: 40px; 
   max-width: 700px;
   font-size: 18px;
   color: #444;
@@ -320,46 +313,43 @@ body {
   text-align: center;
 }
 
-/* Image Grid Rows */
+/* Example image grid (if needed) */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding: 20px 0;
   justify-items: center;
-  margin-top: 20px; /* Additional space above each row (optional) */
+  margin-top: 20px;
 }
 
-/* Wrapper around individual images with a light grey background */
 .image-wrapper {
   width: 90%;
-  background: #f3f3f3; /* Light grey */
+  background: #f3f3f3;
   border-radius: 8px;
   padding: 20px;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
 }
-
 .image-wrapper img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* VIDEO Container below images */
+/* Example video container (if needed) */
 .video-container {
-  margin: 40px auto;  /* Space above/below the video */
+  margin: 40px auto;
   text-align: center;
-  max-width: 800px;   /* Constrain width or remove for full-width video */
+  max-width: 800px;
 }
-
 .video-container video {
-  width: 100%;        /* Responsive video within container */
+  width: 100%;
   height: auto;
 }
 
-/* Scrollbar Styling */
+/* Scrollbar Styling (unchanged) */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -374,7 +364,7 @@ body {
   background: rgba(170, 50, 255, 0.8);
 }
 
-/* Text selection highlight color */
+/* Text selection highlight color (unchanged) */
 ::selection {
   color: #fff;
   background: rgb(170, 50, 255);
@@ -389,7 +379,6 @@ body {
   color: #ccc;
   padding: 10px 0;
 }
-
 .close {
   position: absolute;
   top: 30px;
@@ -400,7 +389,6 @@ body {
   transition: 0.3s;
   cursor: pointer;
 }
-
 .close:hover,
 .close:focus {
   color: #bbb;
