@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
-body {
+/* Make sure html and body can occupy the full viewport */
+html, body {
   margin: 0;
   padding: 0;
-  /* Fixed background image */
-  background: url("purple_theme.jpg") top center no-repeat;
-  
-  /* Allow vertical scrolling, hide horizontal overflow */
-  overflow-x: hidden;
+  height: 100%;
+  overflow-x: hidden; /* Hide horizontal overflow if needed */
   font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Body: background occupies exactly one screen (the first page) */
+body {
+  /* Use the purple_theme.jpg as a fixed, non-repeating,
+     fully covering background for the viewport. */
+  background: url("purple_theme.jpg") top center no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* The image stays fixed in place */
+  color: #fff;                  /* Default text color if needed */
 }
 
 /* Loading Screen */
@@ -78,16 +87,17 @@ body {
   text-decoration: underline;
 }
 
-/* First page (no longer position:fixed) */
+/* First page / main content block */
 #middle {
   width: 100%;
-  min-height: 100vh; /* takes full screen height */
+  min-height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  color: #fff;
   padding: 10vh 0; /* some top/bottom padding */
+  /* The text is white for contrast against the purple background image */
+  color: #fff;
 }
 #middle h1 {
   color: rgb(255, 50, 50);
@@ -105,13 +115,13 @@ body {
 /* Story Generator Button */
 #storygenerator {
   position: fixed;
-  left: 0;             
-  bottom: 70%;         
-  transform: translateY(50%); 
-  width: 160px;        
-  height: 60px;        
-  line-height: 60px;   
-  background: #ff5050; 
+  left: 0;
+  bottom: 70%;
+  transform: translateY(50%);
+  width: 160px;
+  height: 60px;
+  line-height: 60px;
+  background: #ff5050;
   color: #fff;
   font-size: 20px;
   font-weight: 700;
@@ -124,7 +134,7 @@ body {
 }
 
 #storygenerator:hover {
-  background: #ff7070;  
+  background: #ff7070;
   box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
   transform: translateY(50%) scale(1.05);
 }
@@ -286,19 +296,21 @@ body {
 
 /* Second Page Section */
 .second-page {
+  /* The second page can scroll above the fixed background 
+     if content is long. White background for contrast. */
   width: 100%;
   min-height: 100vh;
-  background: #fff; /* White background for the second page section */
-  color: #000;      /* Black text for readability */
+  background: #fff;
+  color: #000;
   text-align: center;
-  padding: 5vh 3vw; /* Vertical and horizontal padding */
+  padding: 5vh 3vw;
   box-sizing: border-box;
 }
 
-/* TEXT between rows: More space above, less space below */
+/* TEXT between rows: more space above, less space below */
 .text-between {
-  margin-top: 150px;     /* Increase space from the images above */
-  margin-bottom: 20px;  /* Decrease space before the images below */
+  margin-top: 150px;   /* Increase space from the images above */
+  margin-bottom: 20px; /* Decrease space before images below */
   max-width: 700px;
   font-size: 18px;
   color: #444;
@@ -343,7 +355,7 @@ body {
 }
 
 .video-container video {
-  width: 100%;        /* Make the video responsive within container */
+  width: 100%;        /* Responsive video within container */
   height: auto;
 }
 
