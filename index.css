@@ -5,7 +5,6 @@ body {
   padding: 0;
   /* Fixed background image */
   background: url("purple_theme.jpg") top center no-repeat;
-  background-attachment: fixed;
   
   /* Allow vertical scrolling, hide horizontal overflow */
   overflow-x: hidden;
@@ -106,14 +105,13 @@ body {
 /* Story Generator Button */
 #storygenerator {
   position: fixed;
-  left: 0;             /* pinned to the left edge */
-  bottom: 70%;         /* around halfway down the screen */
+  left: 0;             
+  bottom: 70%;         
   transform: translateY(50%); 
-  /* Larger and more striking appearance */
-  width: 160px;        /* bigger width */
-  height: 60px;        /* taller button */
-  line-height: 60px;   /* vertically center text */
-  background: #ff5050; /* bright color */
+  width: 160px;        
+  height: 60px;        
+  line-height: 60px;   
+  background: #ff5050; 
   color: #fff;
   font-size: 20px;
   font-weight: 700;
@@ -125,11 +123,10 @@ body {
   transition: transform 0.4s ease-in-out, background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
-/* Hover effect for extra emphasis */
 #storygenerator:hover {
-  background: #ff7070;  /* slightly lighter red on hover */
+  background: #ff7070;  
   box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
-  transform: translateY(50%) scale(1.05); /* Slight scale up on hover */
+  transform: translateY(50%) scale(1.05);
 }
 
 /* Side Buttons */
@@ -297,25 +294,49 @@ body {
   box-sizing: border-box;
 }
 
+/* 
+  Here we create a more spaced-out grid, 
+  but we’ll simply reuse this grid class
+  multiple times (one for each row).
+*/
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Set 3 columns */
-  gap: 15px; /* Space between images */
-  padding: 20px;
-  justify-items: center; /* Center-align items within their grid cells */
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  gap: 30px; /* Increased gap for looser arrangement */
+  padding: 20px 0; /* Extra space around images */
+  justify-items: center;
 }
 
+/* 
+  Light purple background for each image, 
+  plus some padding to create a "card" effect 
+*/
 .image-wrapper {
-  width: 100%; /* Take full width of the container */
-  position: relative; /* Needed for positioning the image */
-  overflow: hidden; /* Hide any overflow outside the frame */
-  border-radius: 4px; /* Optional: Adds rounded corners */
+  width: 90%;
+  background: #f3e5f5; /* Light purple */
+  border-radius: 8px;  /* Slightly rounded corners */
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; /* Hide overflow if image is bigger than wrapper */
 }
 
 .image-wrapper img {
-  width: 100%; /* Scale the image to fit the width of the container */
-  height: auto; /* Maintain the original aspect ratio */
-  display: block; /* Ensures the image behaves as a block element */
+  width: 100%; /* Scale the image to fit the wrapper width */
+  height: auto; 
+  display: block; 
+}
+
+/* Paragraph text between rows */
+.text-between {
+  margin: 30px auto;
+  max-width: 700px;
+  font-size: 18px;
+  color: #444; /* Softer text color */
+  line-height: 1.5;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 /* Scrollbar */
