@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
+@font-face {
+  font-family: 'SFPro';
+  src: url('fonts/sf-pro-text_regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFBold';
+  src: url('fonts/sf-pro-text_semibold.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* 
   1) Ensure no background is set on the body
   2) Body & html can still be set to 100% height if desired, 
@@ -303,14 +317,15 @@ html, body {
 /* Example text-between rows (if needed) */
 .text-between {
   margin-top: 80px; 
-  margin-bottom: 40px; 
+  margin-bottom: 30px; 
   max-width: 700px;
-  font-size: 18px;
+  font-size: 28px;
   color: #444;
   line-height: 1.5;
   padding: 0 20px;
   box-sizing: border-box;
   text-align: center;
+  font-family: 'SFBold', Helvetica, Arial, sans-serif;
 }
 
 /* Example image grid (if needed) */
@@ -336,6 +351,11 @@ html, body {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.03);
 }
 
 /* Example video container (if needed) */
