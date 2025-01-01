@@ -125,7 +125,7 @@
   <!-- SECOND PAGE (Images + Text) -->
   <div class="second-page">
 
-    <!-- First row of images -->
+    <!-- FIRST ROW OF IMAGES -->
     <div class="image-grid">
       <div class="image-wrapper animated fadeInUp" style="animation-delay:0.3s;">
         <img src="img/1.png" alt="Image 1" />
@@ -137,13 +137,13 @@
         <img src="img/3.png" alt="Image 3" />
       </div>
     </div>
-    
-    <!-- Text between the first and second row of images -->
+
+    <!-- TEXT BETWEEN FIRST AND SECOND ROW (closer to the images below, more space above) -->
     <p class="text-between">
-      这里可以放一些描述性文案，介绍第一行图片的意义，或者给出一个过渡说明。
+      这里可以放一些描述性文案，介绍或过渡说明第一行图片与第二行内容。
     </p>
 
-    <!-- Second row of images -->
+    <!-- SECOND ROW OF IMAGES -->
     <div class="image-grid">
       <div class="image-wrapper animated fadeInUp" style="animation-delay:0.6s;">
         <img src="img/11.png" alt="Image 4" />
@@ -156,10 +156,15 @@
       </div>
     </div>
 
-    <!-- Text after the second row (optional) -->
-    <p class="text-between">
-      这里可以放一些额外描述，或引导用户进行下一步操作。
-    </p>
+    <!-- VIDEO AFTER THE IMAGES -->
+    <div class="video-container">
+      <video controls width="600" poster="thumbnail.jpg">
+        <source src="video.mp4" type="video/mp4" />
+        <source src="video.webm" type="video/webm" />
+        <!-- Fallback text for browsers that do not support the video tag -->
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
   </div>
 
