@@ -107,6 +107,7 @@ html, body {
   text-align: center;
   color: #fff; /* White text for contrast against the background */
   position: relative;
+  z-index: -1;
 }
 
 #middle h1 {
