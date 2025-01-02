@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
 @font-face {
@@ -418,3 +419,422 @@ html, body {
   text-decoration: none;
   cursor: pointer;
 }
+=======
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+@font-face {
+  font-family: 'SFPro';
+  src: url('fonts/sf-pro-text_regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFBold';
+  src: url('fonts/sf-pro-text_semibold.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 
+  1) Ensure no background is set on the body
+  2) Body & html can still be set to 100% height if desired, 
+     but the main background is on #middle 
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal overflow if needed */
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Loading Screen (unchanged) */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgb(170, 50, 255);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#spinner {
+  animation: rotate 0.56s infinite linear;
+  width: 50px;
+  height: 50px;
+  border: 12px solid #fff;
+  border-bottom: 12px solid rgb(170, 50, 255);
+  border-radius: 50%;
+  margin: 0;
+}
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Purple sliding boxes (unchanged) */
+#box {
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+}
+#box div {
+  width: 16.66vw;
+  height: 100%;
+  display: inline-block;
+}
+.box1 {
+  background: rgb(170, 50, 255);
+}
+.box2 {
+  background: rgb(170, 50, 255);
+  margin-left: -5px;
+}
+
+/* Mobile menu (unchanged) */
+#menu {
+  width: 100%;
+  text-align: center;
+  margin: 6vh 0px;
+  display: none; /* Visible in smaller screens via media query */
+}
+#menu a {
+  margin: 0px 6%;
+  font-size: 19px;
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* 
+  First page / main content block 
+  => exactly one page in height 
+  => scrolling background 
+*/
+#middle {
+  width: 100%;
+  height: 100vh; /* Occupies exactly one viewport height */
+  background: url("purple_theme.jpg") center top no-repeat;
+  background-size: cover;
+  background-attachment: scroll; /* Ensures it moves as the page scrolls */
+  
+  /* Center content vertically & horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff; /* White text for contrast against the background */
+  position: relative;
+}
+
+#middle h1 {
+  color: rgb(255, 50, 50);
+  font-size: 70px;
+  text-decoration: underline;
+}
+
+#middle table {
+  width: 30%;
+  margin: 6vh auto;
+}
+#middle table tr td {
+  text-align: center;
+}
+
+/* Story Generator Button (unchanged) */
+#storygenerator {
+  position: fixed;
+  left: 0;
+  bottom: 70%;
+  transform: translateY(50%);
+  width: 160px;
+  height: 60px;
+  line-height: 60px;
+  background: #ff5050;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0 30px 30px 0;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  z-index: 999;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out, background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+#storygenerator:hover {
+  background: #ff7070;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+  transform: translateY(50%) scale(1.05);
+}
+
+/* Side Buttons (unchanged) */
+#about {
+  width: 10vw;
+  height: 10vw;
+  bottom: 40vh;
+  text-align: center;
+  font-size: 25px;
+  transform: rotate(-90deg);
+  background: transparent;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 4;
+  transition: 0.4s ease-in-out;
+  border-radius: 0 0 100px 100px;
+}
+#work {
+  width: 10vw;
+  height: 10vw;
+  text-align: center;
+  font-size: 25px;
+  transform: rotate(90deg);
+  background: transparent;
+  color: #fff;
+  position: fixed;
+  right: 0;
+  bottom: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 4;
+  transition: 0.4s ease-in-out;
+  border-radius: 0 0 100px 100px;
+}
+/* Hover states for side buttons */
+#about:hover,
+#work:hover,
+#contact:hover {
+  background: rgba(170, 50, 255, 0.9);
+  cursor: pointer;
+}
+
+/* Social Icons (unchanged) */
+.social {
+  color: #fff;
+  font-size: 22px;
+  border-radius: 50%;
+  transition: 0.4s ease-in-out;
+  margin: 0px 8px;
+  text-align: center;
+}
+.social:hover {
+  cursor: pointer;
+  color: rgb(170, 50, 255);
+}
+
+/* Container for pop-ups (unchanged) */
+.container {
+  width: 90vw;
+  height: 90vh;
+  padding: 5vh 5vw;
+  background: rgb(170, 50, 255);
+  color: #fff;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+  display: none;
+}
+.container div {
+  font-size: 25px;
+  margin: 20px 0px;
+  transition: 0.4s ease-in-out;
+}
+.container div:hover {
+  cursor: pointer;
+}
+.container section {
+  margin: 8vh 0px;
+}
+.container h1 {
+  font-size: 60px;
+  text-decoration: underline;
+}
+.container p {
+  font-size: 21px;
+}
+
+/* Buttons inside containers (unchanged) */
+.btn_one {
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #fff;
+  background: transparent;
+  border: 3px solid #fff;
+  padding: 8px 40px;
+  border-radius: 80px;
+  font-weight: bold;
+  margin: 2vh 10px;
+  transition: 0.4s ease-in-out;
+}
+.btn_one:hover {
+  cursor: pointer;
+  color: rgb(170, 50, 255);
+  background: #fff;
+}
+.btn_two {
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: rgb(170, 50, 255);
+  background: #fff;
+  border: 3px solid #fff;
+  padding: 8px 40px;
+  border-radius: 80px;
+  font-weight: bold;
+  margin: 2vh 10px;
+  transition: 0.4s ease-in-out;
+}
+.btn_two:hover {
+  cursor: pointer;
+  padding: 8px 60px;
+}
+
+/* Form fields in pop-up containers (unchanged) */
+.container form textarea {
+  width: 96%;
+  margin: 20px 1%;
+  border: 0px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  resize: none;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 10px;
+  transition: 0.4s ease-in-out;
+}
+.container form input:focus {
+  outline: none;
+  border-bottom: 3px solid rgba(255, 255, 255, 1);
+}
+.container form textarea:focus {
+  outline: none;
+  border-bottom: 3px solid rgba(255, 255, 255, 1);
+}
+::placeholder {
+  color: #fff;
+}
+
+/* Second Page Section (scrollable content after the first page) */
+.second-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: 5vh 3vw;
+  box-sizing: border-box;
+}
+
+/* Example text-between rows (if needed) */
+.text-between {
+  margin-top: 80px; 
+  margin-bottom: 30px; 
+  max-width: 700px;
+  font-size: 28px;
+  color: #444;
+  line-height: 1.5;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'SFBold', Helvetica, Arial, sans-serif;
+}
+
+/* Example image grid (if needed) */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px 0;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.image-wrapper {
+  width: 90%;
+  background: #f3f3f3;
+  border-radius: 18px;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+/* Example video container (if needed) */
+.video-container {
+  margin: 40px auto;
+  text-align: center;
+  max-width: 800px;
+}
+.video-container video {
+  width: 100%;
+  height: auto;
+}
+
+/* Scrollbar Styling (unchanged) */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(170, 50, 255);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(170, 50, 255, 0.8);
+}
+
+/* Text selection highlight color (unchanged) */
+::selection {
+  color: #fff;
+  background: rgb(170, 50, 255);
+}
+
+/* Misc elements (e.g., modal close button) */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+}
+.close {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+>>>>>>> 7a0bef2af9869e1611f74b09b187a4631e358b81
