@@ -363,7 +363,7 @@ var pJS = function(tag_id, params){
     this.vx_i = this.vx;
     this.vy_i = this.vy;
 
-    
+
 
     /* if shape is image */
 
@@ -391,9 +391,6 @@ var pJS = function(tag_id, params){
         }
       }
     }
-
-    
-
   };
 
 
