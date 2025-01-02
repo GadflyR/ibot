@@ -6,33 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <title>iBOT</title>
 
-  <!-- Animate.css -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
-  />
-
-  <!-- Google Fonts -->
-  <!-- 原本引入了 Josefin Sans，这里我们同时保留 Comfortaa 用于 slogan -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"/>
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-    crossorigin="anonymous"
-  />
-
-  <!-- jQuery -->
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous">
-  </script>
-
-  <!-- Custom CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -123,7 +101,7 @@
     </section>
   </div>
 
-  <!-- SECOND PAGE (Images + Text) -->
+  <!-- SECOND PAGE (new layout) -->
   <div class="second-page">
     <div class="video-container">
       <video controls width="600">
@@ -131,7 +109,7 @@
         Your browser does not support the video tag.
       </video>
     </div>
-    
+
     <h1>Ibot语言豹，AI时代，快乐开跑</h1>
     <p class="text-between">
       Lo一眼我们的AI机器人美照
@@ -167,45 +145,83 @@
       </div>
     </div>
 
-    <p class="text-between">
-      上视频，视觉盛宴:
-    </p>
-    
-    <div class="video-container">
-      <video controls width="600">
-        <source src="videos/charlie.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <!-- 公司新闻 + 2行轮播 (placeholder) -->
+    <div class="company-news">
+      <h2>公司新闻</h2>
+      <!-- 2行轮播示例，仅做结构示意，替换为你自己的轮播组件/代码 -->
+      <div class="news-carousel">
+        <p>新闻1：这里放第一行轮播内容...</p>
+        <p>新闻2：这里放第二行轮播内容...</p>
+      </div>
     </div>
-    <div class="video-container">
-      <video controls width="600">
-        <source src="videos/li.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+
+    <!-- 冠军刘文佳拍图照片 (右侧圆形) -->
+    <div class="champion-photo">
+      <!-- 建议使用一张裁剪成正圆的图，或者用CSS使其圆形 -->
+      <img src="img/liu.png" alt="冠军刘文佳" />
     </div>
-    <div class="video-container">
-      <video controls width="600">
-        <source src="videos/ruo1.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="video-container">
-      <video controls width="600">
-        <source src="videos/ruo2.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="video-container">
-      <video controls width="600">
-        <source src="videos/qi.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="video-container">
-      <video controls width="600">
-        <source src="videos/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+
+    <!-- 两列布局：左(名师推荐) + 右(海淀小学生使用场景) -->
+    <div class="two-column-layout">
+      <!-- 海淀名师推荐 -->
+      <div class="left-column">
+        <h3>海淀名师推荐</h3>
+
+        <!-- Charlie老师视频 -->
+        <div class="video-container">
+          <video controls>
+            <source src="videos/charlie.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- 海淀李老师视频 -->
+        <div class="video-container">
+          <video controls>
+            <source src="videos/li.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- 继续其他老师视频... -->
+        <div class="video-container">
+          <video controls>
+            <source src="videos/teacher3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- 使用场景海淀小学生 -->
+      <div class="right-column">
+        <h3>使用场景海淀小学生</h3>
+
+        <!-- 若谕选老师视频 -->
+        <div class="video-container">
+          <video controls>
+            <source src="videos/ruo1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- 若谕放学了视频 -->
+        <div class="video-container">
+          <video controls>
+            <source src="videos/ruo2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- 男孩启蒙视频 -->
+        <div class="video-container">
+          <video controls>
+            <source src="videos/qi.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- 继续更多视频... -->
+      </div>
     </div>
   </div>
 

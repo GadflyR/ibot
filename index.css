@@ -359,13 +359,55 @@ html, body {
   transform: scale(1.02);
 }
 
-/* Example video container (if needed) */
-.video-container {
-  position: relative;
-  z-index: 10;
-  margin: 40px auto;
+.company-news {
   text-align: center;
-  max-width: 800px;
+  margin-bottom: 40px;
+}
+.company-news h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.news-carousel p {
+  font-size: 20px;
+  margin: 4px 0;
+  color: #444;
+}
+
+/* Champion photo - right circle */
+.champion-photo {
+  text-align: right;
+  margin: 0 3vw 40px 0;
+}
+.champion-photo img {
+  width: 200px;       /* adjust as needed */
+  height: 200px;      /* make it a square so border-radius:50% can make it round */
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Two-column layout for the video sections */
+.two-column-layout {
+  display: flex;
+  flex-wrap: wrap; /* responsive fallback */
+  gap: 30px;
+  justify-content: space-around;
+}
+.two-column-layout .left-column,
+.two-column-layout .right-column {
+  flex: 1 1 400px; /* grow/shrink, min width 400px */
+  max-width: 600px; /* or whatever suits your design */
+}
+.two-column-layout h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Example for the video container (already in your CSS)
+   - just ensure it’s wide enough within your columns */
+.video-container {
+  margin-bottom: 20px;
 }
 .video-container video {
   width: 100%;
