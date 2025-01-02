@@ -147,7 +147,7 @@ html, body {
 #storygenerator:hover {
   background: #ff7070;
   box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
-  transform: translateY(50%) scale(1.05);
+  transform: translateY(50%) scale(1.02);
 }
 
 /* Side Buttons (unchanged) */
@@ -356,7 +356,7 @@ html, body {
 }
 
 .image-wrapper:hover img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 /* Example video container (if needed) */
