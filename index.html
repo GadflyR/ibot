@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>iBOT</title>
+
+  <!-- Animate.css -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+  />
+
+  <!-- Google Fonts -->
+  <!-- 原本引入了 Josefin Sans，这里我们同时保留 Comfortaa 用于 slogan -->
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  />
+
+  <!-- jQuery -->
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading">
+    <div id="spinner"></div>
+  </div>
+
+  <!-- Particles Background -->
+  <div id="particles-js" style="position: fixed; height: 100%; width: 100%;"></div>
+
+  <!-- Purple Sliding Boxes (initial animation) -->
+  <div id="box">
+    <div class="box1 onlywide animated bounceOutLeft" style="animation-delay:1.7s;"></div>
+    <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.8s;"></div>
+    <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.9s;"></div>
+    <div class="box2 animated bounceOutRight"         style="animation-delay:1.9s;"></div>
+    <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.8s;"></div>
+    <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
+  </div>
+
+  <li><a
+    id="storygenerator"
+    href="https://story.ibot1.net/"
+    class="animated fadeIn"
+    style="animation-delay:2.2s;"
+  >story generator</a></li>
+  
+  <!-- Side Buttons -->
+  <a
+    id="about"
+    onclick="showabout()"
+    class="animated fadeIn"
+    style="animation-delay:2.2s;"
+  >about</a>
+
+  <a
+    id="work"
+    onclick="showwork()"
+    class="animated fadeIn"
+    style="animation-delay:2.2s;"
+  >brand story</a>
+
+  <!-- FIRST PAGE / MAIN CONTENT -->
+  <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
+    <h1>iBot</h1>
+    <h2>AI Companionship / Bilingual Environment / Digital Human Conversations</h2>
+
+    <!-- Mobile Menu (only displayed on small screens) -->
+    <div id="menu">
+      <a onclick="showabout()">about</a>
+      <a onclick="showwork()">brand story</a>
+    </div>
+  </div>
+
+  <!-- ABOUT Container -->
+  <div id="about_container" class="container">
+    <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
+    <h1>关于iBot。</h1>
+    <section>
+      <h2>iBot是什么？</h2>
+      <p>AI时代中国孩子的科技玩伴，让高智高能的AI科技给您的孩子营造多语言成长环境，呵护ta的心灵健康，培养taAI时代的未来竞争力。</p>
+      <p>我们致力于以人工智能最新科技生成的儿童情感陪护、心理健康、与亲子关系疏导，以及中国儿童全维度的“未来竞争力”素养成长。</p>
+    </section>
+    <section>
+      <h2>为什么选择iBot？</h2>
+      <p>
+        人工智能科技已经跨越奇点，将人工智能落地中国儿童的健康成长，符合国家科技创新方针和时代特色，也正是中国千千万万个家庭的迫切需求。
+      </p>
+      <p>
+        AI时代已来，中国青少年应该从小接触AI，了解AI，使用AI，才能在世界科技浪潮的最新发展中走在前列。
+      </p>
+    </section>
+  </div>
+
+  <!-- BRAND STORY Container -->
+  <div id="work_container" class="container">
+    <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
+    <h1>我们的品牌。</h1>
+    <section>
+      <p>
+        我们的品牌故事始于一个简单的梦想：让每个孩子都能享受AI时代的红利，感受科技的力量和乐趣。
+      </p>
+      <p>
+        我们深信，孩子的潜能是无限的，而让他们提早接触并应用AI，不仅可以开拓他们的创造力，更能让他们在未来拥有独当一面的竞争力。
+      </p>
+    </section>
+  </div>
+
+  <!-- SECOND PAGE (Images + Text) -->
+  <div class="second-page">
+    <h1>Ibot语言豹，AI时代，快乐开跑</h1>
+    <p class="text-between">
+      Lo一眼我们的AI机器人美照
+    </p>
+
+    <!-- 第一排图片 -->
+    <div class="image-grid">
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.3s;">
+        <img src="img/1.png" alt="Image 1" />
+      </div>
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.4s;">
+        <img src="img/2.png" alt="Image 2" />
+      </div>
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.5s;">
+        <img src="img/3.png" alt="Image 3" />
+      </div>
+    </div>
+
+    <p class="text-between">
+      Lo一眼我们AI口袋机美照
+    </p>
+
+    <!-- 第二排图片 -->
+    <div class="image-grid">
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.6s;">
+        <img src="img/11.png" alt="Image 4" />
+      </div>
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.7s;">
+        <img src="img/22.png" alt="Image 5" />
+      </div>
+      <div class="image-wrapper animated fadeInUp" style="animation-delay:0.8s;">
+        <img src="img/33.png" alt="Image 6" />
+      </div>
+    </div>
+
+    <p class="text-between">
+      上视频，视觉盛宴:
+    </p>
+    <div class="video-container">
+      <video controls width="600" poster="thumbnail.jpg">
+        <source src="video.mp4" type="video/mp4" />
+        <source src="video.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- CONTACT Container -->
+  <div id="contact_container" class="container">
+    <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
+    <h1>联系我们。</h1>
+    <section>
+      <p>
+        <form>
+          <input type="text" placeholder="name" required>
+          <input type="email" placeholder="email" required><br>
+          <textarea placeholder="your message" required rows="5"></textarea><br>
+          <button class="btn_one">send</button>
+        </form>
+      </p>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <script src="index.js"></script>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
